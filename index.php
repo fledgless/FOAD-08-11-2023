@@ -41,7 +41,7 @@
                 </label>
             </p>
             <menu>
-                <button value="cancel">Annuler</button>
+                <!-- <button value="cancel">Annuler</button> -->
                 <button id="confirmBtn" value="default">Confirmer</button>
             </menu>
         </form>

@@ -50,7 +50,12 @@ regions.forEach((area) => {
         favDialog.showModal();
         let form = document.querySelector("form");
         form.addEventListener("submit", (e) => {
-            console.log(e.target[0].value);
+            if (e.target[0].value === area.getAttribulte("alt")){
+                console.log("région trouvée : ", area.getAttribute("alt"));
+                let options = document.querySelectorAll("option");
+                console.log(options);
+                Array.from(options).filter((option) => option.value === e.target[0].value)[0].remove;
+            }
         });
     });
 });
