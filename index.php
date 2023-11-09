@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte interactive</title>
+    <script type="module" src="index.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div>
       <img src="\France_18_regions.png" alt="Carte des régions de France" usemap="#regions">
-        <map name="regions">
+        <map name="regions" class="regions">
             <area data-id="normandie" shape="poly" coords="310,79,322,95,324,127,317,135,311,139,309,153,287,160,291,175,285,179,284,193,271,181,264,170,254,175,246,165,225,170,205,166,199,173,192,163,200,158,191,153,192,140,183,119,175,100,189,107,196,100,204,100,199,108,207,118,233,125,253,127,273,115,259,113,264,103" href="" alt="normandie">
             <area data-id="hauts-de-france" shape="poly" coords="351,24,316,36,311,80,323,93,323,126,376,140,392,150,399,125,412,118,414,104,421,89,397,64,361,43" href="" alt="hauts-de-france">
             <area data-id="ile-de-france" shape="poly" coords="320,128,316,137,310,140,317,161,329,172,331,179,346,179,352,191,370,190,374,178,387,175,390,164,388,151,374,137" href="" alt="Ile-de-France">
@@ -31,32 +32,19 @@
             <area data-id="la-reunion" shape="poly" coords="504,542,509,548,507,552,513,556,528,561,536,559,536,550,531,540,528,533,516,531,509,534" href="" alt="La Réunion">
         </map>
     </div>
-    <div class="list">
-        <label for="selection-region">Choisissez une région</label>
-
-
-        <select name="region" id="selection-region">
-        <option>Choisissez une région</option>
-            <option>grand-est</option>
-            <option>normandie</option>
-            <option>corse</option>
-            <option>provence-alpes-cote-d-azur</option>
-            <option>pays-de-la-loire</option>
-            <option>hauts-de-france</option>
-            <option>bretagne</option>
-            <option>guyane</option>
-            <option>centre-val-de-loire</option>
-            <option>la-reunion</option>
-            <option>occitanie</option>
-            <option>martinique</option>
-            <option>bourgogne-franche-comte</option>
-            <option>nouvelle-Aquitaine</option>
-            <option>guadeloupe</option>
-            <option>auvergne-rhone-alpes</option>
-            <option>mayotte</option>
-            <option>ile-de-france</option>
-        </select>
-    </div>
-    <script src="index.js"></script>
+    <dialog id="favDialog">
+        <form method="dialog">
+            <p>
+                <label>Régions proposées :
+                    <select>
+                    </select>
+                </label>
+            </p>
+            <menu>
+                <button value="cancel">Annuler</button>
+                <button id="confirmBtn" value="default">Confirmer</button>
+            </menu>
+        </form>
+    </dialog>
 </body>
 </html>
